@@ -3,4 +3,7 @@ project(lab1 C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(lab1 monte_carlo.c)
+add_executable(lab1 main.c
+        monte_carlo.c
+        mandelbrot.c
+)
