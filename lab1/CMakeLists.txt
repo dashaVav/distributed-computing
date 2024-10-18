@@ -6,4 +6,7 @@ set(CMAKE_C_STANDARD 17)
 add_executable(lab1 main.c
         monte_carlo.c
         mandelbrot.c
+        task3/custom_rwlock.c
+        task3/my_rand.c
+        task3/pth_ll_rwl.c
 )
