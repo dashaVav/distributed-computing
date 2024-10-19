@@ -1,0 +1,5 @@
+# ninja log v6
+4	277	1729197387160966379	CMakeFiles/distributed_computing_lab_1.dir/lab1/main.c.o	99b8d55cb83dfa1d
+3	267	1729193622033647918	CMakeFiles/distributed_computing_lab_1.dir/lab1/monte_carlo.c.o	5e043953fd1ffcdc
+2	258	1729194613682468331	CMakeFiles/distributed_computing_lab_1.dir/lab1/timer.c.o	20ff997bd2fc7407
+2	267	1729193622032779197	CMakeFiles/distributed_computing_lab_1.dir/lab1/mandelbrot.c.o	dcfdd45e8c8a8012

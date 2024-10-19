@@ -1,0 +1,3 @@
+/Users/kaori/Downloads/distributed-computing-lab-1/cmake-build-debug/CMakeFiles/distributed_computing_lab_1.dir
+/Users/kaori/Downloads/distributed-computing-lab-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/kaori/Downloads/distributed-computing-lab-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
