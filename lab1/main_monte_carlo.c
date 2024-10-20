@@ -7,6 +7,8 @@ void run_monte_carlo_with_timing(FILE *file, long nthreads, long ntrials) {
     double start, end;
     GET_TIME(start);
     char threads_str[10], trials_str[20];
+    sprintf(threads_str, "%ld", nthreads);
+    sprintf(trials_str, "%ld", ntrials);
     char *args[] = {"program", threads_str, trials_str};
     monte_carlo(3, args);
     GET_TIME(end);

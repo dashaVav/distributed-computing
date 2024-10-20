@@ -7,6 +7,8 @@ void run_mandelbrot_with_timing(FILE *file, long nthreads, long npoints) {
     double start, end;
     GET_TIME(start);
     char threads_str[10], points_str[20];
+    sprintf(threads_str, "%ld", nthreads);
+    sprintf(points_str, "%ld", npoints);
     char *args[] = {"program", threads_str, points_str};
     mandelbrot(3, args);
     GET_TIME(end);
