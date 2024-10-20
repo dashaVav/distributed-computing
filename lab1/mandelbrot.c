@@ -6,7 +6,7 @@
 #include "headers/mandelbrot.h"
 
 pthread_mutex_t mandelbrot_mutex;
-long written_points = 0;
+long written_points;
 
 int check_mandelbrot_point(double complex c) {
     double complex z = 0 + 0 * I;
@@ -55,6 +55,7 @@ int mandelbrot(int argc, char *argv[]) {
     int nthreads = strtoll(argv[1], NULL, 10);
     long npoints = strtoll(argv[2], NULL, 10);
 
+    written_points = 0;
     FILE *output_file = fopen(FILENAME, "w");
     if (!output_file) {
         perror("Failed to open file!");
