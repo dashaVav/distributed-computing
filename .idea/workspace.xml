@@ -22,7 +22,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65539ba8-9028-4af4-beca-ee3eeae58548" name="Changes" comment="Commit with time tests">
-      <change beforePath="$PROJECT_DIR$/lab1/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/main_mandelbrot.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/main_mandelbrot.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "lab-1",
     "last_opened_file_path": "/Users/kaori/Downloads/distributed-computing-lab-1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -116,7 +117,7 @@
       <updated>1729192913230</updated>
       <workItem from="1729192914311" duration="7200000" />
       <workItem from="1729355429598" duration="6450000" />
-      <workItem from="1729373870635" duration="3792000" />
+      <workItem from="1729373870635" duration="4682000" />
     </task>
     <task id="LOCAL-00001" summary="Commit with time tests">
       <option name="closed" value="true" />
@@ -126,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729375461980</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit with time tests">
+      <option name="closed" value="true" />
+      <created>1729407229202</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729407229202</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
