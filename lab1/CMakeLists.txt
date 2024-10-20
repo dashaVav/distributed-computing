@@ -9,4 +9,6 @@ add_executable(lab1 main_monte_carlo.c
         task3/custom_rwlock.c
         task3/my_rand.c
         task3/pth_ll_rwl.c
+        main_mandelbrot.c
+        main_monte_carlo.c
 )
