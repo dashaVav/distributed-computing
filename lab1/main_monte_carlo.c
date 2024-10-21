@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "headers/monte_carlo.h"
-#include "timer.h"
+#include "headers/timer.h"
 
 void run_monte_carlo_with_timing(FILE *file, long nthreads, long ntrials) {
     double start, end;

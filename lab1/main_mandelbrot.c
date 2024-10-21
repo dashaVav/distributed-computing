@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "headers/mandelbrot.h"
-#include "timer.h"
+#include "headers/timer.h"
 
 void run_mandelbrot_with_timing(FILE *file, long nthreads, long npoints) {
     double start, end;
