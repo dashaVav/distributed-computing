@@ -4,7 +4,7 @@
 #include <mpi.h>
 #include <string.h>
 
-void generateData(float* matrix, float* vector, float* result, int rows, int cols, int vecSize) {
+void generate_data(float* matrix, float* vector, float* result, int rows, int cols, int vecSize) {
     for (int i = 0; i < rows * cols; ++i) {
         matrix[i] = (float)(rand() % 100) / 10.0f;
     }
@@ -105,7 +105,7 @@ int main(int argc, char** argv) {
 
         if (rank == 0) {
             globalResult = (float*)malloc(rows * sizeof(float));
-            generateData(matrix, vector, globalResult, rows, cols, vecSize);
+            generate_data(matrix, vector, globalResult, rows, cols, vecSize);
         }
 
         MPI_Bcast(vector, cols, MPI_FLOAT, 0, MPI_COMM_WORLD);

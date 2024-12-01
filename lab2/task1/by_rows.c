@@ -10,7 +10,7 @@ void multiplyByRows(const float *matrix, const float *vector, float *result, int
     }
 }
 
-void generate_data(float *matrix, float *vector, float *result, int rows, int cols) {
+void generateData(float *matrix, float *vector, float *result, int rows, int cols) {
     for (int i = 0; i < rows * cols; ++i) {
         matrix[i] = (float) (rand() % 100) / 10.0f;
     }
@@ -64,7 +64,7 @@ int main(int argc, char *argv[]) {
     int sizes[][2] = {{1000,  1000},
                       {5000,  5000},
                       {10000, 10000}};
-    int numSizes = 3;
+    int num_sizes = 3;
 
     double T_serial[3] = {0.0, 0.0, 0.0};
 
@@ -73,16 +73,16 @@ int main(int argc, char *argv[]) {
             printf("Running sequential test...\n");
         } else {
             printf("Running parallel test with %d processes...\n", size);
-            loadSerialTimes(T_serial, numSizes);
+            loadSerialTimes(T_serial, num_sizes);
         }
         printf("Processes\tMatrix Size\tTime (s)\tSpeedup\t\tEfficiency\n");
     }
 
-    for (int test = 0; test < numSizes; ++test) {
+    for (int test = 0; test < num_sizes; ++test) {
         int rows = sizes[test][0];
         int cols = sizes[test][1];
 
-        float startTime, endTime, duration = 0;
+        float start_time, end_time, duration = 0;
 
         int local_rows = rows / size;
         int local_elements = local_rows * cols;
@@ -96,7 +96,7 @@ int main(int argc, char *argv[]) {
         if (rank == 0) {
             matrix = (float *) malloc(rows * cols * sizeof(float));
             global_result = (float *) malloc(rows * sizeof(float));
-            generate_data(matrix, vector, global_result, rows, cols);
+            generateData(matrix, vector, global_result, rows, cols);
         }
 
         MPI_Scatter(matrix, local_elements, MPI_FLOAT, local_matrix, local_elements, MPI_FLOAT, 0, MPI_COMM_WORLD);
@@ -104,10 +104,10 @@ int main(int argc, char *argv[]) {
 
         size_t iters = 10;
         for (size_t i = 0; i < iters; ++i) {
-            startTime = MPI_Wtime();
+            start_time = MPI_Wtime();
             multiplyByRows(local_matrix, vector, local_vector, local_rows, cols);
-            endTime = MPI_Wtime();
-            duration += endTime - startTime;
+            end_time = MPI_Wtime();
+            duration += end_time - start_time;
             clearVector(local_vector, local_rows);
         }
 
@@ -120,10 +120,10 @@ int main(int argc, char *argv[]) {
         if (rank == 0) {
             size_t remain_rows = rows % size;
             size_t offset = rows - remain_rows;
-            startTime = MPI_Wtime();
+            start_time = MPI_Wtime();
             multiplyByRows(matrix + offset * cols, vector, global_result + offset, remain_rows, cols);
-            endTime = MPI_Wtime();
-            duration += endTime - startTime;
+            end_time = MPI_Wtime();
+            duration += end_time - start_time;
         }
 
         if (rank == 0) {
@@ -147,7 +147,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (rank == 0 && size == 1) {
-        saveSerialTimes(T_serial, numSizes);
+        saveSerialTimes(T_serial, num_sizes);
     }
 
     MPI_Finalize();
